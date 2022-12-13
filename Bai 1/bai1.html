@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>Nguyễn Đức Hải - Nhóm 7</h1>
+    <div class="nhap_a">
+                   
+        <input id ="nhapa" type="text" placeholder="nhap a" style="margin-left: 9px;" />
+        <input id ="nhapb" type="text" placeholder="nhap b" style="margin-left: 9px;" />
+      
+        <button onclick="chan()">Tính</button>
+        <p id="thongbao" >  </p>
+
+    </div>
+  
+    <script>  
+    //alert(Math.floor(4.6))
+     //alert(Number.isInteger(4))
+     let nhapa = document.getElementById('nhapa');
+     let tb = document.getElementById('thongbao');
+     function chan() {
+     var so_a = Number(nhapa.value);
+     var so_b = Number(nhapb.value);
+     if (so_a >= so_b || Number.isInteger(so_a) == false || Number.isInteger(so_b) == false ) {
+        tb.innerHTML = "Vui lòng nhập a nhỏ hơn b cùng là các số nguyên"
+
+     } 
+     else{
+     if (so_a+1 == so_b) {
+        tb.innerHTML = `không tồn tại số nguyên tố nào trong khoảng ${so_a} và ${so_b} nên tổng bằng 0`;
+
+     }
+     else {
+       var tong = 0; 
+      for(var i = so_a + 1 ; i < so_b; i++ ){
+        var so_c =  Math.floor(Math.sqrt(i));
+      
+        var check_i = 0;
+         for(var j = 2; j<= so_c; j++){
+           if (i % j == 0){
+            check_i = 1;
+            break;
+           }
+            
+         }
+
+
+        if (check_i == 0){
+           tong = tong + i; 
+          
+        } 
+        
+
+      }
+      tb.innerHTML = `Tổng các số nguyên tố trong khoảng ${so_a} đến ${so_b} là : ${tong}`;
+
+
+     }
+
+    
+
+     }
+
+      
+     
+
+
+     }
+   
+    
+    </script>
+
+
+
+  
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./tamgiac.css">
+    <title>Document</title>
+</head>
+<body>
+       <h1>Nguyễn Đức Hải - Nhóm 7</h1>
+            
+        <input id ="nhapa" type="text" placeholder="nhập tham số vào function" style="margin-left: 9px;" />
+    
+      
+        <button onclick="numberOneTriangle()">In kết quả</button>
+        <p id="thongbao" >  </p>
+
+        <div id="inkq">
+   
+       </div>  
+  
+    <script>  
+ 
+      
+
+     function numberOneTriangle(th = undefined) {
+
+      var the_b = document.getElementById('inkq');
+      the_b.remove();
+      var the_cc = document.createElement('div');
+      document.body.appendChild(the_cc);
+      the_cc.setAttribute('id', 'inkq');
+
+
+
+      let nhapa = document.getElementById('nhapa');
+      th = Number(nhapa.value);
+
+     if (Number.isInteger(th) == false){
+        var tb = document.getElementById('thongbao');
+        console.log("Xin vui lòng nhập vào số nguyên");
+        tb.innerHTML = "Xin vui lòng nhập vào số nguyên";
+     }
+     else{
+        var tb = document.getElementById('thongbao');
+        if (th <= 1 || th >= 10){
+        console.log("xin vui lòng nhập số trong khoảng từ 1 đến 10");
+        tb.innerHTML = "xin vui lòng nhập số trong khoảng từ 1 đến 10";
+        } 
+        else{
+
+    
+
+
+        var thecha = document.getElementById('inkq');
+          for(var k = 1 ; k <= th; k++){
+
+            var the_div = document.createElement('div');
+            the_div.innerHTML = chuoi_sao(k);
+            thecha.appendChild(the_div);
+            the_div.classList.add("cn_");
+
+          }
+
+
+     
+
+
+        }
+
+
+
+
+
+     }
+
+
+
+
+     }
+    // fffffffffff
+
+    
+    function chuoi_sao(th){
+    var kq = "*";
+    for(var ii = 1; ii < th; ii++){
+      kq = kq + "*";
+
+    }
+
+      return kq;
+    }
+
+
+
+    
+    </script>
+
+
+
+  
+</body>
+</html>
